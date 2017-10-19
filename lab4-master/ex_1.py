@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-from librip.gens import field
+# -*- coding: utf-8 -*-
+from gens import field
 
 goods = [
-    {'title': 'Ковер', 'price': 2000, 'color': 'green'},
-    {'title': 'Диван для отдыха', 'price': 5300, 'color': 'black'},
-    {'title': 'Стелаж', 'price': 7000, 'color': 'white'},
-    {'title': 'Вешалка для одежды', 'price': 800, 'color': 'white'}
+    {'title': 'Carpet', 'price': 2000, 'color': 'green'},
+    {'title': 'Sofa', 'price': 5300, 'color': 'black'},
+    {'title': 'Shelf', 'price': 7000, 'color': 'white'},
+    {'title': 'Hanger', 'price': 800, 'color': 'white'}
 ]
 
 # Реализация задания 1
