@@ -13,7 +13,17 @@ import random
 
 def field(items, *args):
     assert len(args) > 0
-    # Необходимо реализовать генератор 
+
+    if len(args) == 1:
+        key = args[0]
+        print(', '.join(str(items[x][key]) for x in range(len(items))))
+    else:
+        for i in items:
+            output = []
+            for k, v in i:
+                if k in args:
+                    output.append("'%s': '%s'" % (k, v))
+            print (', '.join(output))
 
 
 # Генератор списка случайных чисел
