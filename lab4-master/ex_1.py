@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from gens import field
+from librip import gens
 
 goods = [
     {'title': 'Carpet', 'price': 2000, 'color': 'green'},
