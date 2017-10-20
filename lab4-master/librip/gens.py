@@ -15,15 +15,18 @@ def field(items, *args):
     assert len(args) > 0
 
     if len(args) == 1:
-        key = args[0]
-        print(', '.join(str(items[x][key]) for x in range(len(items))))
+        for item in items:
+            if item[args[0]]:
+                yield '\'' + item[args[0]] + '\''
     else:
-        for i in items:
-            output = []
-            for k, v in i:
-                if k in args:
-                    output.append("'%s': '%s'" % (k, v))
-            print (', '.join(output))
+        for item in items:
+            output = {}
+            for i in item.keys():
+                if i in args:
+                    output[i] = item[i]
+                else:
+                    pass
+            yield output
 
 
 # Генератор списка случайных чисел
@@ -31,5 +34,6 @@ def field(items, *args):
 # gen_random(1, 3, 5) должен выдать примерно 2, 2, 3, 2, 1
 # Hint: реализация занимает 2 строки
 def gen_random(begin, end, num_count):
-    pass
+    for i in range(num_count):
+        yield random.randint(begin, end)
     # Необходимо реализовать генератор

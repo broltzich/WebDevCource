@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from librip.gens import field
+from __future__ import print_function
+from librip.gens import field, gen_random
+
 
 goods = [
     {'title': 'Carpet', 'price': 2000, 'color': 'green'},
@@ -10,12 +12,15 @@ goods = [
 ]
 
 # Реализация задания 1
-#field(goods, 'title','color')
 
-args = ['title', 'color']
-a = []
-for x, c in goods[0].items():
-    if x in args:
-        a.append("'%s': '%s'" % (x, c))
-#print '{' + ', '.join(a) + '}'
-field(goods, args)
+
+print(', '.join(field(goods, 'title')))
+
+for i in field(goods, 'title', 'price'):
+    print(i, end=', ')
+
+print()
+
+
+for i in gen_random(1, 11, 4):
+    print(i)
