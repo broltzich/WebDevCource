@@ -1,7 +1,7 @@
 import requests
 import json
 import datetime
-from base_client import BaseClient
+from bases.base_client import BaseClient
 
 class VkAges(BaseClient):
 
