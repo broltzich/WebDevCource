@@ -17,7 +17,7 @@ def field(items, *args):
     if len(args) == 1:
         for item in items:
             if item[args[0]]:
-                yield '\'' + item[args[0]] + '\''
+                yield item[args[0]]
     else:
         for item in items:
             output = {}

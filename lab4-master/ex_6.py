@@ -30,7 +30,7 @@ def f2(arg):
 
 @print_result
 def f3(arg):
-    pass
+    return list(map(lambda x: x + ' с опытом Python', arg))
 
 
 @print_result
