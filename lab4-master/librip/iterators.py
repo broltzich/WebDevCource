@@ -20,12 +20,12 @@ class Unique(object):
 
         for i in self.items:
             if i is not None:
-                original = i.encode('utf-8')
-                if self.ignore_case:
-                    i = i.encode('utf-8').lower()
-                if i not in self.item_set:
-                    self.item_set.add(i)
-                    return original
+                ncase = i
+                if self.ignore_case and type(i) is not int:
+                    ncase = ncase.encode('utf-8').lower()
+                if ncase not in self.item_set:
+                    self.item_set.add(ncase)
+                    return ncase
         raise StopIteration()
 
     def __iter__(self):

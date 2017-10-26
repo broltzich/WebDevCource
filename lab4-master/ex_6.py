@@ -7,8 +7,6 @@ from librip.decorators import print_result
 from librip.gens import field, gen_random
 from librip.iterators import Unique as unique
 
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 path = 'data_light.json'
 
@@ -17,13 +15,12 @@ path = 'data_light.json'
 with open(path) as f:
     data = json.load(f)
 
-print(sorted(unique(field(data, 'job-name'), ignore_case=True),
-             key=lambda item: item.lower()))
+
 
 @print_result
 def f1(arg):
-
-    pass
+    return sorted(unique(field(arg, 'job-name'), ignore_case=True),
+             key=lambda item: item.lower())
 
 
 @print_result
