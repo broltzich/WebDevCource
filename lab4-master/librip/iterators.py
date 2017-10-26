@@ -20,9 +20,9 @@ class Unique(object):
 
         for i in self.items:
             if i is not None:
-                original = i
+                original = i.encode('utf-8')
                 if self.ignore_case:
-                    i = str(i).lower()
+                    i = i.encode('utf-8').lower()
                 if i not in self.item_set:
                     self.item_set.add(i)
                     return original

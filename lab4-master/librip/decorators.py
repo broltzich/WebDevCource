@@ -2,12 +2,12 @@
 
 
 def print_result(func):
-    def wrapped():
-        result = func()
+    def wrapped(*args, **kwargs):
+        result = func(*args, **kwargs)
         print(func.__name__)
         if type(result) == dict:
             for key, value in result.items():
-                print('%s = %s' %(key, value))
+                print('%s = %s' % (key, value))
         elif type(result) == list:
             for i in result:
                 print(i)
