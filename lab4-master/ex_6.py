@@ -25,7 +25,7 @@ def f1(arg):
 
 @print_result
 def f2(arg):
-    pass
+    return list(filter(lambda x: 'программист' in x, arg))
 
 
 @print_result
