@@ -16,7 +16,6 @@ with open(path) as f:
     data = json.load(f)
 
 
-
 @print_result
 def f1(arg):
     return sorted(unique(field(arg, 'job-name'), ignore_case=True),
