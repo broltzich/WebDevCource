@@ -35,7 +35,8 @@ def f3(arg):
 
 @print_result
 def f4(arg):
-    pass
+    return(['%s, зарплата %s руб.' % (spec, sal) for spec, sal
+            in zip(arg, gen_random(100000, 200000, len(arg)))])
 
 
 with Timer():
