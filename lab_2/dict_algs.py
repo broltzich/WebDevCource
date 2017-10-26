@@ -32,12 +32,6 @@ darja = {
 
 emps = [ivan, darja]
 
-
-#for i in emps:
- #   for p in i.keys():
-  #      for k in p["children"]:
-   #         if k["age"] > 18:
-     #           print (k["name"])
 for i in emps:
     for p in i["children"]:
         if int(p["age"]) > 18:

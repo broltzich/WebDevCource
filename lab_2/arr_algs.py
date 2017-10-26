@@ -7,10 +7,10 @@ def arr_min(arr):
 
 
 def arr_avg(arr):
-    sum = 0
+    s = 0
     for i in arr:
-        sum += i
-    return sum / len(arr)
+        s += i
+    return s / len(arr)
 
 
 arr1 = [43, 54, 22, 2, 345, 4]
