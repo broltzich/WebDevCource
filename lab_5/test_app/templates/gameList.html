@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}List of games{% endblock %}
+
+{% block body %}
+    <table class="table-responsive" width="1000dp" heigh="100dp">
+        {% for game in games %}
+            {% include 'gameListElement.html' with elem=game %}
+        {% endfor %}
+    </table>
+{% endblock %}
