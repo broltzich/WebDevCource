@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
+
 # Create your views here.
 
 data = {
@@ -25,10 +26,19 @@ class ExampleClassBased(View):
 
 
 class GamesView(View):
-    def get(self, request, game_id):
+    def get(self, request):
+        return render(request, 'gameList.html', data)
+
+
+class GameView(View):
+
+    def get_list(self, request):
+        return render(request, 'gameList.html', data)
+
+    def get_game(self, request, game_id):
         select = None
         for game in data['games']:
-            if game_id == game['id']:
+            if int(game_id) == game['id']:
                 select = game
         return render(request, 'gamePage.html', select)
 

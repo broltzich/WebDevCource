@@ -1,1 +1,8 @@
 {% extends 'base.html' %}
+
+{% block title %} Game {% endblock %}
+
+{% block body %}
+    <div>Game: {{ title }}</div>
+    <div>Developer: {{ developer }}</div>
+    <a class = "btn btn-default" href="{% url 'test_app:game_list_view' %}">Back</a>
