@@ -2,10 +2,15 @@
 
 {% block title %}List of games{% endblock %}
 
+
+
 {% block body %}
-    <table class="table-responsive">
+    <div class="container">
+        <div class="row"><h1>Game List</h1></div>
         {% for game in games %}
+        <div class="row">
             {% include 'gameListElement.html' with elem=game %}
+        </div>
         {% endfor %}
-    </table>
+    </div>
 {% endblock %}

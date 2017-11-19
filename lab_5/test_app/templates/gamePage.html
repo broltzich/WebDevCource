@@ -3,6 +3,16 @@
 {% block title %} Game {% endblock %}
 
 {% block body %}
-    <div>Game: {{ title }}</div>
-    <div>Developer: {{ developer }}</div>
-    <a class = "btn btn-default" href="{% url 'test_app:game_list_view' %}">Back</a>
+    <div class="container">
+        <h2>List Element</h2>
+        <div class="container">
+            <div class="row well">Game ID: {{ id }}</div>
+            <div class="row well">Title: {{ title }}</div>
+            <div class="row well">Developer: {{ developer }}</div>
+            <div class="row">
+                <a class = "btn btn-default" href="{% url 'test_app:game_list_view' %}">Back</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

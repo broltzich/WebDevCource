@@ -32,10 +32,7 @@ class GamesView(View):
 
 class GameView(View):
 
-    def get_list(self, request):
-        return render(request, 'gameList.html', data)
-
-    def get_game(self, request, game_id):
+    def get(self, request, game_id):
         select = None
         for game in data['games']:
             if int(game_id) == game['id']:
