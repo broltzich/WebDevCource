@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'Entertainment.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test_db',
+        'NAME': 'mydb',
         'USER': 'dbuser',
         'PASSWORD': '123',
         'HOST': '',
