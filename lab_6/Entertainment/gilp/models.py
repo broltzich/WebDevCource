@@ -23,7 +23,7 @@ class MusicianModel(models.Model):
     group = models.ManyToManyField(MusicalGroupModel, through='MembershipModel')
 
     def __str__(self):
-        return self.name
+        return self
 
 
 class MembershipModel(models.Model):
