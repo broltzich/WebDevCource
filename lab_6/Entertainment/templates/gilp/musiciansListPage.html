@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}List of Musicians{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row"><h1>Musicians</h1></div>
+        {% for person in musicians %}
+        <div class="row">
+            {% include 'listElement.html' with elem=musician %}
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

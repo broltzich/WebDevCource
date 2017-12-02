@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Musician {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>List Element</h2>
+        <div class="container">
+            <div class="row well">ID: {{ id }}</div>
+            <div class="row well">Name: {{ name }}</div>
+            <div class="row well">birth: {{ birth }}</div>
+            <div class="row well">role: {{ role }}</div>
+            <div class="row">
+                <a class = "btn btn-default" href="{% url 'gilp:game_list_view' %}">Back</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
