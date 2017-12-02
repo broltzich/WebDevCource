@@ -8,7 +8,8 @@ import MySQLdb
 
 
 class MusicianView(View):
-    def get(self):
+    def get(self, request, id):
         musicians = MusicianModel.objects.all()
+        return render(request, )
 
 
