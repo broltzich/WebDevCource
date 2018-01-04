@@ -22,7 +22,7 @@ def function_view(request):
 
 class ExampleClassBased(View):
     def get(self, request):
-        return HttpResponse('Response from class baseed view')
+        return HttpResponse('Response from class based view')
 
 
 class GamesView(View):

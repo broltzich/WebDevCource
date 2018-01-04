@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class MusicalGroupModel(models.Model):
+class MusicalGroup(models.Model):
     class Meta:
         db_table = 'musicalgroup'
     title = models.CharField(max_length=100, null=False)
@@ -14,22 +14,32 @@ class MusicalGroupModel(models.Model):
         return self.title
 
 
-class MusicianModel(models.Model):
+class Musician(models.Model):
     class Meta:
         db_table = 'musician'
     name = models.CharField(max_length=100, null=False)
     birth = models.DateField(null=True)
     role = models.CharField(max_length=70, null=True)
-    group = models.ManyToManyField(MusicalGroupModel, through='MembershipModel')
+    group = models.ManyToManyField(MusicalGroup, through='Membership')
 
     def __str__(self):
-        return self
+        return self.name
 
 
-class MembershipModel(models.Model):
+class Membership(models.Model):
     class Meta:
         db_table = 'membership'
-    musicalGroup = models.ForeignKey(MusicalGroupModel)
-    musician = models.ForeignKey(MusicianModel)
+    musicalGroup = models.ForeignKey(MusicalGroup)
+    musician = models.ForeignKey(Musician)
     entered = models.DateField(null=True)
     left = models.DateField(null=True)
+
+
+class Account(models.Model):
+    class Meta:
+        db_table = 'musicianaccount'
+    name = models.CharField(max_length=30, null=True)
+    login = models.CharField(max_length=20, null=False)
+    email = models.CharField(max_length=30, null=False)
+    password = models.CharField(max_length=30, null=False)
+    owner = models.OneToOneField(Musician, on_delete=models.CASCADE, null=True)
