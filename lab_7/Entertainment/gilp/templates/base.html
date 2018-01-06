@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'gilp/style.css' %}" />
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <title>{% block title %}{% endblock %}</title>
+    {% block head %}
+
+    {% endblock %}
 </head>
 <body>
     <div>
