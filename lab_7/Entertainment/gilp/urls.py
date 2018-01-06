@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^groups/$', view=views.MusicalGropuListView.as_view(), name='musical_group_list_view'),
     url(r'^accounts/$', view=views.AccountListView.as_view(), name='account_list_view'),
     url(r'^musicians/(?P<id>\d+)/', view=views.MusicianView.as_view(), name='musician_view'),
+    url(r'^registration/$', view=views.registration, name='registration'),
     # url(r'^musicians/(?P<pk>\d+)/', view=views.MusicianDetailView.as_view(), name='musicianPage')
 
 ]

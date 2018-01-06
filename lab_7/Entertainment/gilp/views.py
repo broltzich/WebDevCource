@@ -49,22 +49,26 @@ def registration(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
-            name_list = ['login', 'password', 'password2', 'email']
+            name_list = ['name', 'login', 'password', 'password2', 'email']
             name_dict = {x: request.POST.get(x, '') for x in name_list}
+
+            name = data['name']
+            if not name:
+                errors.append('Enter the name')
 
             login = data['login']
             if not login:
-                errors.append('Enter login')
+                errors.append('Enter the login')
             elif len(login) < 5:
                 errors.append('Login length must at least 5 characters')
 
             email = data['email']
             if not email:
-                errors.append('Enter email')
+                errors.append('Enter the email')
 
             password = data['password']
             if not password:
-                errors.append('Enter password')
+                errors.append('Enter the password')
             elif len(password) < 6:
                 errors.append('Password length must be at least 6 characters')
             elif password != data['password2']:
@@ -79,6 +83,6 @@ def registration(request):
                 form.save_m2m()
 
             return HttpResponseRedirect('/login/')
-        else:
-            form = RegistrationForm()
+    else:
+        form = RegistrationForm()
     return render(request, 'regForm.html', {'error': errors, 'name_dict': name_dict, 'form': form})

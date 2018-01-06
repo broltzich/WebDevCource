@@ -1,3 +1,10 @@
 li a {
     color: green;
 }
+
+
+#authWindow {
+
+    margin 0 auto;
+    border: solid;
+}

@@ -38,7 +38,8 @@ class Membership(models.Model):
 class Account(models.Model):
     class Meta:
         db_table = 'account'
-    login = models.CharField(max_length=20, null=False)
-    email = models.CharField(max_length=30, null=False)
-    password = models.CharField(max_length=30, null=False)
+    name = models.CharField(max_length=50, null=True)
+    login = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    password = models.CharField(max_length=30)
     owner = models.OneToOneField(Musician, on_delete=models.CASCADE, null=True)
