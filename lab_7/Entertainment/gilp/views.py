@@ -13,7 +13,7 @@ from .forms import *
 class MusicianListView(ListView):
     model = Musician
     context_object_name = 'musicians'
-    template_name = 'musicianListPa ge.html'
+    template_name = 'musicianListPage.html'
 
 
 class MusicalGropuListView(ListView):
@@ -22,13 +22,10 @@ class MusicalGropuListView(ListView):
     template_name = 'musicalGroupListPage.html'
 
 
-class MusicianDetailView(DetailView):
-    model = Musician
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
-
+class AccountListView(ListView):
+    model = Account
+    context_object_name = 'accounts'
+    template_name = 'accountListPage.html'
 
 class MusicianView(View):
     def get(self, request, id):
@@ -45,12 +42,43 @@ class MusicianView(View):
 
 
 def registration(request):
+    name_dict = {}
+    errors = []
+
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            #
+            data = form.cleaned_data
+            name_list = ['login', 'password', 'password2', 'email']
+            name_dict = {x: request.POST.get(x, '') for x in name_list}
+
+            login = data['login']
+            if not login:
+                errors.append('Enter login')
+            elif len(login) < 5:
+                errors.append('Login length must at least 5 characters')
+
+            email = data['email']
+            if not email:
+                errors.append('Enter email')
+
+            password = data['password']
+            if not password:
+                errors.append('Enter password')
+            elif len(password) < 6:
+                errors.append('Password length must be at least 6 characters')
+            elif password != data['password2']:
+                errors.append('Passwords do not match')
+
+            if not errors:
+                new_form = form.save(commit=False)
+                new_form.login = data.get('login')
+                new_form.email = data.get('email')
+                new_form.password = data.get('password')
+                new_form.save()
+                form.save_m2m()
 
             return HttpResponseRedirect('/login/')
         else:
             form = RegistrationForm()
-    return render(request, 'regForm.html', {'form': form})
+    return render(request, 'regForm.html', {'error': errors, 'name_dict': name_dict, 'form': form})
