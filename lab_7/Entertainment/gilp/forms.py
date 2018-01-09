@@ -2,20 +2,21 @@ from django import forms
 from .models import *
 
 
-class RegistrationForm(forms.Form):
+class SignUpForm(forms.Form):
     class Meta:
-        model = Account
-        # exclude = ['login', 'password', 'owner']
-    name = forms.CharField(widget=forms.TextInput(attrs={'class'}), label='name')
-    login = forms.CharField(min_length=5, label='login')
-    email = forms.CharField(min_length=5, label='email')
-    password = forms.CharField(min_length=6, widget=forms.PasswordInput, label='password')
-    password2 = forms.CharField(min_length=6, widget=forms.PasswordInput, label='confirm password')
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email', 'password']
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control form-group', 'placeholder': 'Username'}), label='username')
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control form-group', 'placeholder': 'First name'}), label='first name')
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control form-group', 'placeholder': 'Last name'}), label='last name')
+    email = forms.CharField(min_length=5, widget=forms.TextInput(attrs={'class': 'form-control form-group', 'placeholder': 'Email'}), label='email')
+    password = forms.CharField(min_length=6, widget=forms.PasswordInput(attrs={'class': 'form-control form-group', 'placeholder': 'Password'}), label='password')
+    password2 = forms.CharField(min_length=6, widget=forms.PasswordInput(attrs={'class': 'form-control form-group', 'placeholder': 'Confirm password'}), label='confirm password')
 
 
 class AuthenticationForm(forms.Form):
     class Meta:
-        model = Account
+        model = User
         # exclude = ['name', 'email', 'owner']
     login = forms.CharField(min_length=5, label='Login')
     password = forms.CharField(min_length=6, widget=forms.PasswordInput, label='password')
