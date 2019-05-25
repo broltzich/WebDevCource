@@ -1,0 +1,6 @@
+{% extends 'my_app/base.html' %}
+{% block title %}IncludePage {% endblock %}
+{% block head %}{% endblock %}
+{% block content %}
+    <li><a href = "{% url 'page' element.id %}">{{ element.title }} included page</a></li>
+{% endblock %}

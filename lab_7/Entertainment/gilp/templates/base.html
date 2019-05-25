@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'gilp/style.css' %}" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/docs/4.0/examples/navbar-top-fixed/navbar-top-fixed.css" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#"><h1>Musical app</h1></a>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><h3>Home</h3></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><h3>Musicians</h3></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><h3>Musical Groups</h3></a>
+            </li>
+        </ul>
+        <div class="form-inline mt-2 mt-md-0">
+            <div class="text-light"><h4>{% block login %}{% endblock %}</h4></div>
+        </div>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

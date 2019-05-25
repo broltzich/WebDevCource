@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}List of Musicians{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row"><h1>Musicians</h1></div>
+        <div class="row">
+            <div class="col-xs-2"><b>Id</b></div>
+            <div class="col-xs-2"><b>Name</b></div>
+            <div class="col-xs-2"><b>Birth</b></div>
+            <div class="col-xs-2"><b>Role</b></div>
+        </div>
+        <br>
+        {% for person in musicians %}
+        <div class="row">
+            <div class="col-xs-2">{{ person.id }}</div>
+            <div class="col-xs-2">{{ person.name }}</div>
+            <div class="col-xs-2">{{ person.birth }}</div>
+            <div class="col-xs-2">{{ person.role }}</div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

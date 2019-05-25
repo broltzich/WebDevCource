@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+{% load template_filters %}
+
+{% for pc in numbers %}
+    <li>
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-0">
+                {% if pc.name.lower in pics.keys %}
+                    <img src="{% static pics|get_item:pc.name.lower %}" class="pcpic">
+                {% else %}
+                    <img src="{% static  '404.jpg' %}" class="pic404">
+                {% endif %}
+                <div class="pcdesc">
+                    <a href="{% url 'page' pc.id %}">{{ pc.name }}</a>
+                </div>
+
+            </div>
+        </div>
+    </li>
+{% empty %}
+    <li>Элементов нет</li>
+{% endfor %}

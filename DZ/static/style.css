@@ -1,0 +1,85 @@
+
+.circle-button{
+    line-height: 30px;
+    color: whitesmoke;
+    font-size: 30pt;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: greenyellow;
+    float: left;
+    position: fixed;
+    right: 5%;
+    bottom: 10%;
+    border: solid 2px lime;
+    box-shadow: #666 0px 2px 4px;
+}
+ .circle-button:hover{
+     border-color: greenyellow;
+     text-decoration-color: ghostwhite;
+     background-color: lime;
+     box-shadow: #666 0px 1px 2px;
+
+ }
+ .circle-button:active{
+     border-color: greenyellow;
+     text-decoration-color: ghostwhite;
+     background-color: lime;
+     box-shadow: #666 0px 1px 2px;
+
+ }
+
+.knopka, .forma{
+    margin-bottom: 5px;
+}
+ .regbuttn {
+     margin-top: 5%;
+     margin-left: 2%;
+     padding-bottom: 5%;
+     display: inline-block;
+
+}
+.crumbs{
+    margin-top: 55px;
+    margin-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.pclist{
+    display: inline-block;
+    /*border: 1px solid darkred;*/
+    height: 100px;
+    width: inherit;
+}
+.pcel{
+    display: inline-block;
+    border: 0 solid darkorange;
+    width: 120px;
+}
+.pcpic{
+  display: inline-block;
+  width: 120px;
+    border: 0 solid yellow;
+    background-color: white;
+}
+.pic404{
+  display: inline;
+  width: 110px;
+    border: 0 solid yellow;
+    background-color: white;
+border-radius: 25px;
+}
+.pcdesc{
+    display: inline-block;
+    border: 0 solid lawngreen;
+}
+img.center{
+    display:block;
+    margin: 0 auto;
+}
+.error{
+    padding-left: 5px;
+    font: 12px sans-serif;
+    color: red;
+}

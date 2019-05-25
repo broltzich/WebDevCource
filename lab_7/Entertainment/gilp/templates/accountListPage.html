@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}List of Musician accounts{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row"><h1>Accounts</h1></div>
+        <div class="row">
+            <div class="col-xs-2"><b>Id</b></div>
+            <div class="col-xs-2"><b>Name</b></div>
+            <div class="col-xs-2"><b>Login</b></div>
+            <div class="col-xs-2"><b>Email</b></div>
+            <div class="col-xs-2"><b>Password</b></div>
+            <div class="col-xs-2"><b>Owner</b></div>
+        </div>
+        <br>
+        {% for acc in accounts %}
+        <div class="row">
+            <div class="col-xs-2">{{ acc.id }}</div>
+            <div class="col-xs-2">{{ acc.name }}</div>
+            <div class="col-xs-2">{{ acc.login }}</div>
+            <div class="col-xs-2">{{ acc.email }}</div>
+            <div class="col-xs-2">{{ acc.password }}</div>
+            <div class="col-xs-2">{{ acc.owner }}</div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

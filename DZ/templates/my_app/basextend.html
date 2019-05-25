@@ -1,0 +1,14 @@
+{% extends 'my_app/base.html' %}
+{% load static %}
+{% block title %}Extend{% endblock %}
+{% block head %}<style> .txt{ color: {{ colors.red1 }}; } </style>{% endblock %}
+{% block content %}
+    <h2>extended page from <i>my_app/base.html</i> </h2>
+    <div class="txt">Цветная строка</div>
+    <b>Список цветов:</b>
+    <ul>
+        {% for k,v in colors.items %}
+            <li>{{ k }} = {{ v }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
